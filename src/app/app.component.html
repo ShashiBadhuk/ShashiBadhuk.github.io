@@ -1,0 +1,11 @@
+<mat-sidenav-container hasBackdrop="false">
+  <mat-sidenav #sidenav mode="side" position="end">
+    <page-sidenav></page-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <header-default [sidenav]="sidenav"></header-default>
+    <router-outlet></router-outlet>
+    <footer-default></footer-default>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
