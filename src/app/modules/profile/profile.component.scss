@@ -4,3 +4,19 @@
 .mat-card-header {
   text-align: center;
 }
+.short-bio ul.list-group {
+  padding: 0px;
+}
+.short-bio ul.list-group .list-group-item {
+  padding: 2px;
+  color: #64646f;
+}
+.short-bio ul.list-group .list-group-item .badge-pill {
+  color: #ccc;
+}
+.major-skills .mat-card {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 8px;
+  padding-bottom: 0px;
+}

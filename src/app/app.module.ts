@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgMaterialModule } from './ng-material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,10 +11,16 @@ import { FooterDefaultComponent } from './shared/widgets/footer-default/footer-d
 import { PageSidenavComponent } from './shared/widgets/page-sidenav/page-sidenav.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderDefaultComponent, FooterDefaultComponent, PageSidenavComponent],
+  declarations: [
+    AppComponent,
+    HeaderDefaultComponent,
+    FooterDefaultComponent,
+    PageSidenavComponent,
+  ],
   imports: [
     BrowserModule,
     NgMaterialModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
   ],

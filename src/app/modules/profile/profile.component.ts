@@ -1,25 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
-
+import { Profile } from 'src/app/shared/models/profile';
+import { ProfileService } from 'src/app/shared/services/profile.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  tiles: Tile[] = [
-    { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
-    { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
-    { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
-    { text: 'Four', cols: 2, rows: 1, color: '#DDBDF1' },
-  ];
-  constructor() {}
+  profile: Profile;
+  constructor(private profileService: ProfileService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.profileService
+      .getFullProfile()
+      .then((profile: Profile) => {
+        this.profile = profile;
+        console.log(this.profile);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+  getFontAwesomeIcon(iconClassStr) {
+    return iconClassStr.replace(/far|fab|fas/gi, '');
+  }
 }

@@ -1,0 +1,98 @@
+{
+  "name": "Shashi Badhuk",
+  "title": "NodeJS FullStack Engineer",
+  "imageUrl": "/assets/profile/default.jpeg",
+  "shortBio": [{
+    "type": "contactno",
+    "label": "Contact No.",
+    "icon": "fa-mobile",
+    "value": "+91 8287115839"
+  }, {
+    "type": "email",
+    "label": "Email",
+    "icon": "fa-envelope",
+    "value": "shashi1517@gmail.com"
+  }, {
+    "type": "skype",
+    "label": "Skype",
+    "icon": "fab fa-skype",
+    "value": "shashi.badhuk"
+  }, {
+    "type": "dob",
+    "label": "Date of Birth",
+    "icon": "fa-calendar-alt",
+    "value": "15-March-1991"
+  }, {
+    "type": "gender",
+    "label": "Gender",
+    "value": "Male"
+  }, {
+    "type": "marital",
+    "label": "Marital Status",
+    "value": "Married"
+  }],
+  "socialAccounts": [{
+    "type": "linkedin",
+    "label": "LinkedIn",
+    "icon": "fab fa-linkedin-in",
+    "profileId": "shashibadhuk",
+    "profileLink": "https://in.linkedin.com/in/shashibadhuk"
+  }, {
+    "type": "stackoverflow",
+    "label": "Stack Overflow",
+    "icon": "fab fa-stack-overflow",
+    "profileId": "2462313",
+    "profileLink": "https://stackoverflow.com/users/2462313/shashi"
+  }, {
+    "type": "github",
+    "label": "GitHub",
+    "icon": "fab fa-github",
+    "profileId": "ShashiBadhuk",
+    "profileLink": "https://github.com/ShashiBadhuk"
+  }, {
+    "type": "twitter",
+    "label": "Twitter",
+    "icon": "fab fa-twitter",
+    "profileId": "@ShashiBadhuk",
+    "profileLink": "https://github.com/ShashiBadhuk"
+  }, {
+    "type": "facebook",
+    "label": "Facebook",
+    "icon": "fab fa-facebook-f",
+    "profileId": "shashi.badhuk",
+    "profileLink": "https://www.facebook.com/shashi.badhuk"
+  }],
+  "majorSkills": [{
+    "type": "nodejs",
+    "label": "NodeJS",
+    "value": 85
+  }, {
+    "type": "express",
+    "label": "ExpressJS",
+    "value": 80
+  }, {
+    "type": "angular",
+    "label": "Angular",
+    "value": 85
+  }, {
+    "type": "mongo",
+    "label": "MongoDB",
+    "value": 80
+  }, {
+    "type": "mysql",
+    "label": "MySQL",
+    "value": 65
+  }, {
+    "type": "docker",
+    "label": "Docker",
+    "value": 70
+  }, {
+    "type": "ionic",
+    "label": "Ionic",
+    "value": 85
+  }, {
+    "type": "devops",
+    "label": "DevOps",
+    "value": 55
+  }]
+}

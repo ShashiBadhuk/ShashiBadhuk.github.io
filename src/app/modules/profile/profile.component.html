@@ -1,40 +1,48 @@
-
-
-<mat-grid-list cols="4">
-  <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'#252532fa'">
-    <mat-card class="example-card">
-      <img mat-card-image src="/assets/profile/default.jpeg" alt="Shashi Badhuk">
-      <mat-card-header>
-        <mat-card-title>Shashi Badhuk</mat-card-title>
-        <mat-card-subtitle>NodeJS Full Stack Engineer</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-actions>
-        <button mat-icon-button>
-          <mat-icon fontSet="fab" fontIcon="fa-linkedin-in"></mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon fontSet="fab" fontIcon="fa-stack-overflow"></mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon fontSet="fab" fontIcon="fa-twitter"></mat-icon>
-        </button>
-        <button mat-icon-button>
-          <mat-icon fontSet="fab" fontIcon="fa-facebook"></mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'#252532fa'">
-    Banner
-  </mat-grid-tile>
-  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'#252532fa'">
-    Skills
-  </mat-grid-tile>
-
-
-</mat-grid-list>
+<div class="container-fluid default-bg" *ngIf="profile">
+  <div class="row">
+    <div class="col-md-2">
+      <mat-card class="default-bg">
+        <img mat-card-image src="/assets/profile/default.jpeg" alt="Shashi Badhuk">
+        <mat-card-header>
+          <mat-card-title>{{profile.name}}</mat-card-title>
+          <mat-card-subtitle>{{profile.title}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content [style.overflow]="'auto'" [style.height.px]="'300'">
+          <mat-divider></mat-divider>
+          <div class="short-bio" *ngIf="profile.shortBio">
+              <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of profile.shortBio">
+                  <mat-icon *ngIf="item.itemIcon; else showBioLabel" fontSet="{{item.itemIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'}}" fontIcon="{{ getFontAwesomeIcon(item.itemIcon) }}"></mat-icon>
+                  <ng-template #showBioLabel>
+                    {{item.itemLabel}}
+                  </ng-template>
+                  <span class="badge badge-primary badge-pill">{{item.itemValue}}</span>
+                </li>
+              </ul>
+          </div>
+          <div class="major-skills" *ngIf="profile.majorSkills">
+          <mat-card class="default-bg" *ngFor="let skill of profile.majorSkills">
+            <mat-card-content>
+              <h5>{{skill.skillLabel + ' - ' + skill.skillValue+'%'}}</h5>
+              <section class="example-section">
+                <mat-progress-bar mode="determinate" value="{{skill.skillValue}}" color="primary">
+                </mat-progress-bar>
+              </section>
+            </mat-card-content>
+          </mat-card>
+          </div>
+        </mat-card-content>
+        <mat-card-actions *ngIf="profile.socialAccounts">
+          <button mat-icon-button *ngFor="let account of profile.socialAccounts">
+            <mat-icon fontSet="{{account.accountIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'}}" fontIcon="{{ getFontAwesomeIcon(account.accountIcon) }}" color="primary"></mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-md-auto">
+      9 width columns
+    </div>
+  </div>
+</div>
 
 

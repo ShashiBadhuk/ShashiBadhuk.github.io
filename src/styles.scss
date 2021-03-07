@@ -1,4 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+// Imports functions, variables, and mixins that are needed by other Bootstrap files
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/grid"; // add the grid
+
+// Imports fontawesome free
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
 html,
@@ -12,4 +19,11 @@ body {
 .mat-grid-tile .mat-figure {
   justify-content: flex-start !important ;
   align-items: flex-start !important;
+}
+.default-bg {
+  background: linear-gradient(
+    159deg,
+    rgba(37, 37, 50, 0.98) 0%,
+    rgba(35, 35, 45, 0.98) 100%
+  );
 }
