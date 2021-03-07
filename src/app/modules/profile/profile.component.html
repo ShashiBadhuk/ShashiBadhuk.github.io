@@ -1,26 +1,25 @@
-<div class="container-fluid default-bg" *ngIf="profile">
-  <div class="row">
-    <div class="col-md-2">
-      <mat-card class="default-bg">
-        <img mat-card-image src="/assets/profile/default.jpeg" alt="Shashi Badhuk">
-        <mat-card-header>
-          <mat-card-title>{{profile.name}}</mat-card-title>
-          <mat-card-subtitle>{{profile.title}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content [style.overflow]="'auto'" [style.height.px]="'300'">
-          <mat-divider></mat-divider>
-          <div class="short-bio" *ngIf="profile.shortBio">
-              <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of profile.shortBio">
-                  <mat-icon *ngIf="item.itemIcon; else showBioLabel" fontSet="{{item.itemIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'}}" fontIcon="{{ getFontAwesomeIcon(item.itemIcon) }}"></mat-icon>
-                  <ng-template #showBioLabel>
-                    {{item.itemLabel}}
-                  </ng-template>
-                  <span class="badge badge-primary badge-pill">{{item.itemValue}}</span>
-                </li>
-              </ul>
-          </div>
-          <div class="major-skills" *ngIf="profile.majorSkills">
+<div class="row" *ngIf="profile">
+  <div class="col-md-2 nopadding">
+    <mat-card class="default-bg">
+      <img mat-card-image src="{{profile.imageUrl}}" alt="{{profile.name}}">
+      <mat-card-header>
+        <mat-card-title>{{profile.name}}</mat-card-title>
+        <mat-card-subtitle>{{profile.title}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content [style.overflow]="'auto'" [style.height.px]="'300'">
+        <mat-divider></mat-divider>
+        <div class="short-bio" *ngIf="profile.shortBio">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of profile.shortBio">
+              <mat-icon *ngIf="item.itemIcon; else showBioLabel" fontSet="{{item.itemIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'}}" fontIcon="{{ getFontAwesomeIcon(item.itemIcon) }}"></mat-icon>
+              <ng-template #showBioLabel>
+                {{item.itemLabel}}
+              </ng-template>
+              <span class="badge badge-primary badge-pill">{{item.itemValue}}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="major-skills" *ngIf="profile.majorSkills">
           <mat-card class="default-bg" *ngFor="let skill of profile.majorSkills">
             <mat-card-content>
               <h5>{{skill.skillLabel + ' - ' + skill.skillValue+'%'}}</h5>
@@ -30,19 +29,18 @@
               </section>
             </mat-card-content>
           </mat-card>
-          </div>
-        </mat-card-content>
-        <mat-card-actions *ngIf="profile.socialAccounts">
-          <button mat-icon-button *ngFor="let account of profile.socialAccounts">
-            <mat-icon fontSet="{{account.accountIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'}}" fontIcon="{{ getFontAwesomeIcon(account.accountIcon) }}" color="primary"></mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-auto">
+        </div>
+      </mat-card-content>
+      <mat-card-actions *ngIf="profile.socialAccounts">
+        <button mat-icon-button *ngFor="let account of profile.socialAccounts">
+          <mat-icon fontSet="{{account.accountIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'}}" fontIcon="{{ getFontAwesomeIcon(account.accountIcon) }}" color="primary"></mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="col-md-10 nopadding">
+    <div class="profile-container">
       9 width columns
     </div>
   </div>
 </div>
-
-

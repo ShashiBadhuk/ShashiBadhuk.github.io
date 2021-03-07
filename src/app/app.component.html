@@ -3,8 +3,20 @@
     <page-sidenav></page-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
-    <header-default [sidenav]="sidenav"></header-default>
-    <router-outlet></router-outlet>
+    <!--header-default [sidenav]="sidenav"></header-default-->
+    <div class="container-fluid default-bg">
+      <div class="page">
+        <div class="page-content">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="sidebar">
+          <button mat-icon-button class="example-icon" (click)="sidenav.toggle()" color="primary" position="end">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <button mat-stroked-button class="sidebar-active-btn" color="primary">Home</button>
+        </div>
+      </div>
+    </div>
     <footer-default></footer-default>
   </mat-sidenav-content>
 </mat-sidenav-container>
