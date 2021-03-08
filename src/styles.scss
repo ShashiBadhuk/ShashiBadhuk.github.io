@@ -6,6 +6,7 @@ $primary: #c2185b;
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/grid"; // add the grid
 @import "~bootstrap/scss/list-group"; // add the grid
+@import "~bootstrap/scss/carousel"; 
 
 // Imports fontawesome free
 @import "~@fortawesome/fontawesome-free/css/all.css";
@@ -45,4 +46,28 @@ body {
 .list-group-item:hover {
   background-color: $primary;
   color: #fff;
+}
+.profile-head div.mat-card-header-text {
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+/*scrollbar css*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #495057; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:$primary; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:$danger; 
 }

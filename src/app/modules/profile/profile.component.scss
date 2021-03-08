@@ -1,8 +1,17 @@
+.mat-card {
+  text-align: center;
+}
 .mat-card-image {
+  max-width: 160px;
   border-radius: 50% !important;
 }
 .mat-card-header {
   text-align: center;
+}
+.profile-head div.mat-card-header-text {
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
 }
 .short-bio ul.list-group {
   padding: 0px;
@@ -19,4 +28,10 @@
   padding-right: 0px;
   padding-top: 8px;
   padding-bottom: 0px;
+}
+.carousel-item {
+  max-height: 360px;
+}
+.profile-wrapper .row {
+  max-width: calc(100% - 32px);
 }

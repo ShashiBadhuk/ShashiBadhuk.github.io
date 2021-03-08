@@ -1,30 +1,52 @@
 <div class="row" *ngIf="profile">
   <div class="col-md-2 nopadding">
     <mat-card class="default-bg">
-      <img mat-card-image src="{{profile.imageUrl}}" alt="{{profile.name}}">
-      <mat-card-header>
-        <mat-card-title>{{profile.name}}</mat-card-title>
-        <mat-card-subtitle>{{profile.title}}</mat-card-subtitle>
+      <img
+        mat-card-image
+        src="{{ profile.imageUrl }}"
+        alt="{{ profile.name }}"
+      />
+      <mat-card-header class="profile-head">
+        <mat-card-title>{{ profile.name }}</mat-card-title>
+        <mat-card-subtitle>{{ profile.title }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content [style.overflow]="'auto'" [style.height.px]="'300'">
         <mat-divider></mat-divider>
         <div class="short-bio" *ngIf="profile.shortBio">
           <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of profile.shortBio">
-              <mat-icon *ngIf="item.itemIcon; else showBioLabel" fontSet="{{item.itemIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'}}" fontIcon="{{ getFontAwesomeIcon(item.itemIcon) }}"></mat-icon>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+              *ngFor="let item of profile.shortBio"
+            >
+              <mat-icon
+                *ngIf="item.itemIcon; else showBioLabel"
+                fontSet="{{
+                  item.itemIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'
+                }}"
+                fontIcon="{{ getFontAwesomeIcon(item.itemIcon) }}"
+              ></mat-icon>
               <ng-template #showBioLabel>
-                {{item.itemLabel}}
+                {{ item.itemLabel }}
               </ng-template>
-              <span class="badge badge-primary badge-pill">{{item.itemValue}}</span>
+              <span class="badge badge-primary badge-pill">{{
+                item.itemValue
+              }}</span>
             </li>
           </ul>
         </div>
         <div class="major-skills" *ngIf="profile.majorSkills">
-          <mat-card class="default-bg" *ngFor="let skill of profile.majorSkills">
+          <mat-card
+            class="default-bg"
+            *ngFor="let skill of profile.majorSkills"
+          >
             <mat-card-content>
-              <h5>{{skill.skillLabel + ' - ' + skill.skillValue+'%'}}</h5>
+              <h5>{{ skill.skillLabel + " - " + skill.skillValue + "%" }}</h5>
               <section class="example-section">
-                <mat-progress-bar mode="determinate" value="{{skill.skillValue}}" color="primary">
+                <mat-progress-bar
+                  mode="determinate"
+                  value="{{ skill.skillValue }}"
+                  color="primary"
+                >
                 </mat-progress-bar>
               </section>
             </mat-card-content>
@@ -33,14 +55,52 @@
       </mat-card-content>
       <mat-card-actions *ngIf="profile.socialAccounts">
         <button mat-icon-button *ngFor="let account of profile.socialAccounts">
-          <mat-icon fontSet="{{account.accountIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'}}" fontIcon="{{ getFontAwesomeIcon(account.accountIcon) }}" color="primary"></mat-icon>
+          <mat-icon
+            fontSet="{{
+              account.accountIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'
+            }}"
+            fontIcon="{{ getFontAwesomeIcon(account.accountIcon) }}"
+            color="primary"
+          ></mat-icon>
         </button>
       </mat-card-actions>
     </mat-card>
   </div>
   <div class="col-md-10 nopadding">
-    <div class="profile-container">
-      9 width columns
+    <div class="profile-wrapper container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div
+            id="carouselExampleSlidesOnly"
+            class="carousel slide"
+            [attr.data-ride]="'carousel'"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  class="d-block w-100"
+                  src="https://elanta.app/nazar/arter-demo/img/bg.jpg"
+                  alt="First slide"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="https://papers.co/wallpaper/papers.co-ms68-dawn-mountain-landscape-nature-blue-29-wallpaper.jpg"
+                  alt="Second slide"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="https://papers.co/wallpaper/papers.co-ms68-dawn-mountain-landscape-nature-blue-29-wallpaper.jpg"
+                  alt="Third slide"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
