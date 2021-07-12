@@ -30,6 +30,11 @@
                 "glob": "**/*",
                 "input": "src/app/shared/data",
                 "output": "data/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/environments/prod",
+                "output": "/"
               }
             ],
             "styles": [

@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "buildprod": "ng build --output-path docs --base-href 'https://shashibadhuk.com'",
+    "postbuildprod": "cp docs/index.html docs/404.html",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
