@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgxTypedJsModule } from 'ngx-typed-js';
 import { NgMaterialModule } from './ng-material.module';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +25,7 @@ import { PageSidenavComponent } from './shared/widgets/page-sidenav/page-sidenav
     HttpClientModule,
     NgMaterialModule,
     AppRoutingModule,
+    NgxTypedJsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

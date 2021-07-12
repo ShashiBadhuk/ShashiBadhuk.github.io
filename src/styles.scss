@@ -6,7 +6,7 @@ $primary: #c2185b;
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/grid"; // add the grid
 @import "~bootstrap/scss/list-group"; // add the grid
-@import "~bootstrap/scss/carousel"; 
+@import "~bootstrap/scss/carousel";
 
 // Imports fontawesome free
 @import "~@fortawesome/fontawesome-free/css/all.css";
@@ -14,6 +14,7 @@ $primary: #c2185b;
 html,
 body {
   height: 100%;
+  background: rgba(35, 35, 45, 0.98);
 }
 body {
   margin: 0;
@@ -54,20 +55,24 @@ body {
 }
 /*scrollbar css*/
 ::-webkit-scrollbar {
-  width: 2px;
+  /* width: 2px; */
+  display: none;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #495057; 
+  /* background: #495057;  */
+  display: none;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background:$primary; 
+  /* background:$primary; */
+  display: none;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background:$danger; 
+  /* background:$danger; */
+  display: none;
 }

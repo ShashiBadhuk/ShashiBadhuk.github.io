@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Profile } from 'src/app/shared/models/profile';
 import { ProfileService } from 'src/app/shared/services/profile.service';
 @Component({
@@ -9,9 +8,24 @@ import { ProfileService } from 'src/app/shared/services/profile.service';
 })
 export class ProfileComponent implements OnInit {
   profile: Profile;
+  panelOpenState = true;
+  counter: any;
+  headlines: any;
   constructor(private profileService: ProfileService) {}
 
   ngOnInit(): void {
+    this.counter = {
+      customers: 28,
+      projects: 36,
+      repos: 84,
+      certificates: 2,
+    };
+    this.headlines = [
+      'NodeJS Full Stack Engineer',
+      'A Freelancer with DevOps Skills',
+      '8+ Years Experiance in Full Stack Domain',
+      'Hybrid Mobile App Developer',
+    ];
     this.profileService
       .getFullProfile()
       .then((profile: Profile) => {

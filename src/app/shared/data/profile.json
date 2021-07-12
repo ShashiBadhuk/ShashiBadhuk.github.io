@@ -42,7 +42,7 @@
     "label": "Stack Overflow",
     "icon": "fab fa-stack-overflow",
     "profileId": "2462313",
-    "profileLink": "https://stackoverflow.com/users/2462313/shashi"
+    "profileLink": "https://stackoverflow.com/users/2462313/shashi?tab=profile"
   }, {
     "type": "github",
     "label": "GitHub",
@@ -54,7 +54,7 @@
     "label": "Twitter",
     "icon": "fab fa-twitter",
     "profileId": "@ShashiBadhuk",
-    "profileLink": "https://github.com/ShashiBadhuk"
+    "profileLink": "https://twitter.com/shashibadhuk?lang=en"
   }, {
     "type": "facebook",
     "label": "Facebook",
