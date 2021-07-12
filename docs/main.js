@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/enution/Documents/Workspace/Personal/shashibadhuk/src/main.ts */"zUnb");
+module.exports = __webpack_require__(/*! /Users/enution/Documents/Workspace/Personal/ShashiBadhuk.github.io/src/main.ts */"zUnb");
 
 
 /***/ }),
