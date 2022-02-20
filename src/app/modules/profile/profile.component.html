@@ -54,7 +54,12 @@
         </div>
       </mat-card-content>
       <mat-card-actions *ngIf="profile.socialAccounts">
-        <a *ngFor="let account of profile.socialAccounts" href="{{account.profileLink}}" target="_blank" mat-icon-button>
+        <a
+          *ngFor="let account of profile.socialAccounts"
+          href="{{ account.profileLink }}"
+          target="_blank"
+          mat-icon-button
+        >
           <mat-icon
             fontSet="{{
               account.accountIcon.indexOf('fab') >= 0 ? 'fab' : 'fas'
@@ -62,7 +67,7 @@
             fontIcon="{{ getFontAwesomeIcon(account.accountIcon) }}"
             color="primary"
           ></mat-icon>
-          </a>
+        </a>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -89,8 +94,22 @@
                     <h2 class="typing"></h2>
                   </ngx-typed-js>
                   <div class="btn-group profile-head-btn-group">
-                    <a href="https://www.linkedin.com/in/shashibadhuk" target="_blank" mat-raised-button color="accent">Hire Me</a> &nbsp;
-                    <a href="/assets/resume/ShashiBadhuk_NodeJS_FullStack_9Years.pdf" target="_blank" mat-raised-button color="primary" download>Download CV</a> 
+                    <a
+                      href="https://www.linkedin.com/in/shashibadhuk"
+                      target="_blank"
+                      mat-raised-button
+                      color="accent"
+                      >Hire Me</a
+                    >
+                    &nbsp;
+                    <a
+                      href="/assets/resume/ShashiBadhuk_NodeJS_FullStack_9Years.pdf"
+                      target="_blank"
+                      mat-raised-button
+                      color="primary"
+                      download
+                      >Download CV</a
+                    >
                   </div>
                 </div>
               </div>
@@ -108,51 +127,71 @@
           <mat-tab-group>
             <mat-tab label="About Me">
               <div class="container counter-section">
-              <div class="row text-center">
-                <div class="col" *ngIf="counter && counter.customers">
-                  <div class="counter">
-                    <i class="fas fa-users fa-2x"></i>
-                    <p class="count-text ">Happy Customer</p>
-                    <h2 class="count-title">{{ counter.customers }}</h2>
+                <div class="row text-center">
+                  <div class="col" *ngIf="counter && counter.customers">
+                    <div class="counter">
+                      <i class="fas fa-users fa-2x"></i>
+                      <p class="count-text">Happy Customer</p>
+                      <h2 class="count-title">{{ counter.customers }}</h2>
+                    </div>
+                  </div>
+                  <div class="col" *ngIf="counter && counter.projects">
+                    <div class="counter">
+                      <i class="fas fa-tasks fa-2x"></i>
+                      <p class="count-text">Project Complete</p>
+                      <h2 class="count-title">{{ counter.projects }}</h2>
+                    </div>
+                  </div>
+                  <div class="col" *ngIf="counter && counter.repos">
+                    <div class="counter">
+                      <i class="fas fa-code-branch fa-2x"></i>
+                      <p class="count-text">Repositories</p>
+                      <h2 class="count-title">{{ counter.repos }}</h2>
+                    </div>
+                  </div>
+                  <div class="col" *ngIf="counter && counter.certificates">
+                    <div class="counter">
+                      <i class="fas fa-medal fa-2x"></i>
+                      <p class="count-text">Certifications</p>
+                      <h2 class="count-title">{{ counter.certificates }}</h2>
+                    </div>
                   </div>
                 </div>
-                <div class="col" *ngIf="counter && counter.projects">
-                  <div class="counter">
-                    <i class="fas fa-tasks fa-2x"></i>
-                    <p class="count-text ">Project Complete</p>
-                    <h2 class="count-title">{{ counter.projects }}</h2>
-                  </div>
-                </div>
-                <div class="col" *ngIf="counter && counter.repos">
-                  <div class="counter">
-                    <i class="fas fa-code-branch fa-2x"></i>
-                    <p class="count-text ">Repositories</p>
-                    <h2 class="count-title">{{ counter.repos }}</h2>
-                  </div>
-                </div>
-                <div class="col" *ngIf="counter && counter.certificates">
-                  <div class="counter">
-                    <i class="fas fa-medal fa-2x"></i>
-                    <p class="count-text ">Certifications</p>
-                    <h2 class="count-title">{{ counter.certificates }}</h2>
-                  </div>
-                </div>
-              </div>
               </div>
 
               <mat-accordion>
-                <mat-expansion-panel (opened)="panelOpenState = true"
-                                     (closed)="panelOpenState = false" [expanded]='true'>
+                <mat-expansion-panel
+                  (opened)="panelOpenState = true"
+                  (closed)="panelOpenState = false"
+                  [expanded]="true"
+                >
                   <mat-expansion-panel-header>
-                    <mat-panel-title>
-                      About Me
-                    </mat-panel-title>
+                    <mat-panel-title> About Me </mat-panel-title>
                     <mat-panel-description>
                       Professional Summary
                     </mat-panel-description>
                   </mat-expansion-panel-header>
-                  <p>8+ years of experience in designing and development of software solutions for Web Apps, Javascript based TV/STB/OTT Apps and Hybrid Mobile Apps. Expert in designing high-performance, secure, and scalable web applications on the AWS stack along with exposure in architecture, design, and development of web applications, integration with devops tools or with 3rd-party solutions, and deployment on cloud. As an individual contributor the major skillsets are Javascript, NodeJS, ExpressJS, Angular, MongoDB, MySql, Docker, Kubernetes, Redis, AWS Cloud, Git, Nginx, Cordova, Ionic etc.</p>
-                  <p>Currently working on project which manage collaboration devices remotely to perform their activities like firmware upgrade, reboot, events syncing, and configurations changes etc. Involved in design and development for its microservices and its integration with other third-party tools along with the deployment on AWS Infrastructure. </p>
+                  <p>
+                    9+ years of experience in designing and development of
+                    software solutions for Web Apps, Javascript based TV/STB/OTT
+                    Apps and Hybrid Mobile Apps. Expert in designing
+                    high-performance, secure, and scalable web applications on
+                    the AWS stack along with exposure in architecture, design,
+                    and development of web applications, integration with devops
+                    tools or with 3rd-party solutions, and deployment on cloud.
+                    As an individual contributor the major skillsets are
+                    Javascript, NodeJS, ExpressJS, Angular, MongoDB, MySql,
+                    Docker, Kubernetes, Redis, AWS Cloud, Git, Nginx, Cordova,
+                    Ionic etc.
+                  </p>
+                  <p>
+                    Currently working on project which manage collaboration
+                    devices remotely to perform their activities like firmware
+                    upgrade, reboot, events syncing, and configurations changes
+                    etc. Involved in design and development for its
+                    microservices and its integration with other third-party
+                    tools along with the deployment on AWS Infrastructure.
+                  </p>
                 </mat-expansion-panel>
               </mat-accordion>
             </mat-tab>
@@ -163,10 +202,17 @@
                   <div class="list-group">
                     <div class="list-group-item">
                       <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Staff Engineer at</h5>
+                      </div>
+                      <p class="mb-1">Nagarro Software</p>
+                      <small>Since July 2021</small>
+                    </div>
+                    <div class="list-group-item">
+                      <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">Senior Software Engineer at</h5>
                       </div>
                       <p class="mb-1">Barco Electronics</p>
-                      <small>Since Feb 2020</small>
+                      <small>Feb 2020 to June 2021</small>
                     </div>
                     <div class="list-group-item">
                       <div class="d-flex w-100 justify-content-between">
@@ -201,26 +247,34 @@
                         <h5 class="mb-1">2007 - 2010</h5>
                       </div>
                       <p class="mb-1">Bachelor's in Computer Application</p>
-                      <small>Chhatrapati Shahu Ji Maharaj University, Kanpur, India</small>
+                      <small
+                        >Chhatrapati Shahu Ji Maharaj University, Kanpur,
+                        India</small
+                      >
                     </div>
                   </div>
                 </div>
               </div>
-            
-            
-            
             </mat-tab>
             <mat-tab label="Skills & Certification">
-              <div class="skills-section-head alert alert-default">Technical Skills</div>
+              <div class="skills-section-head alert alert-default">
+                Technical Skills
+              </div>
               <table class="table skill-table">
                 <tbody>
                   <tr>
                     <th scope="row">Frontend</th>
-                    <td>HTML, CSS, Bootstrap, Javascript, TypeScript , Angular, MarionetteJS, Ionic, Cordova</td>
+                    <td>
+                      HTML, CSS, Bootstrap, Javascript, TypeScript , Angular,
+                      MarionetteJS, Ionic, Cordova
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row">Backend</th>
-                    <td>NodeJS, ExpressJS, GraphQL, NestJS, Mocha & Chai, EJS, Handlebar, RabbitMQ, PHP</td>
+                    <td>
+                      NodeJS, ExpressJS, GraphQL, NestJS, Mocha & Chai, EJS,
+                      Handlebar, RabbitMQ, PHP
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row">Database</th>
@@ -228,19 +282,30 @@
                   </tr>
                   <tr>
                     <th scope="row">DevOps</th>
-                    <td>Git, Nginx, Apache, Jenkins, Docker, Kubernetes, Kibana, Terraform, Newrelic</td>
+                    <td>
+                      Git, Nginx, Apache, Jenkins, Docker, Kubernetes, Kibana,
+                      Terraform, Newrelic
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row">Cloud</th>
-                    <td>AWS Cloud, Load Balancing & AutoScaling, SSL Integration, DNS Management, Mongo Atlas, Azure IoT, Google K8s Cluster etc</td>
+                    <td>
+                      AWS Cloud, Load Balancing & AutoScaling, SSL Integration,
+                      DNS Management, Mongo Atlas, Azure IoT, Google K8s Cluster
+                      etc
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row">Others Tools</th>
-                    <td>Gulp, Browserify, Webpack, PM2, JIRA, Slack, Basecamp</td>
+                    <td>
+                      Gulp, Browserify, Webpack, PM2, JIRA, Slack, Basecamp
+                    </td>
                   </tr>
                 </tbody>
               </table>
-              <div class="skills-section-head alert alert-default">Certifications</div>
+              <div class="skills-section-head alert alert-default">
+                Certifications
+              </div>
               <table class="table skill-table">
                 <tbody>
                   <tr>
@@ -249,14 +314,15 @@
                   </tr>
                   <tr>
                     <th>2</th>
-                    <td>Certificate In Entrepreneurship and Leadership Management By Amity University, Noida</td>
+                    <td>
+                      Certificate In Entrepreneurship and Leadership Management
+                      By Amity University, Noida
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </mat-tab>
             <mat-tab label="Portfolio">
-
-
               <div class="row">
                 <div class="col experiance-section">
                   <div class="alert alert-default">Project Portfolio</div>
@@ -264,38 +330,61 @@
                     <div class="list-group-item">
                       <p class="mb-1">IoT Based Device Management</p>
                       <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Node, Express, EJS, Angular, Bootstrap, MongoDB, Jenkins, Docker, Kubernetes, Azure IoT</h5>
+                        <h5 class="mb-1">
+                          Node, Express, EJS, Angular, Bootstrap, MongoDB,
+                          Jenkins, Docker, Kubernetes, Azure IoT
+                        </h5>
                       </div>
-                      <small>Hassle free management of collaboration devices and its peripherals It increases availability, thereby enhancing meeting room user productivity. It brings an easy to use UI for remote and reliable device management to guarantee the user experience</small>
+                      <small
+                        >Hassle free management of collaboration devices and its
+                        peripherals It increases availability, thereby enhancing
+                        meeting room user productivity. It brings an easy to use
+                        UI for remote and reliable device management to
+                        guarantee the user experience</small
+                      >
                     </div>
                     <div class="list-group-item">
                       <p class="mb-1">OTT Solution for Set Top Box Device</p>
                       <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Node, Express, Angular, Bootstrap, MongoDB, Jenkins, Docker, Redis, AWS Cloud, RabbitMQ, Handlebar</h5>
+                        <h5 class="mb-1">
+                          Node, Express, Angular, Bootstrap, MongoDB, Jenkins,
+                          Docker, Redis, AWS Cloud, RabbitMQ, Handlebar
+                        </h5>
                       </div>
-                      <small>The DTH company wants Smart OTT solution for their Set Top Box devices. Which can provide subscriber based access to a world of OTT/Video Streaming apps. It includes bunch of Apps, and a huge library of curated online videos, Catch-Up TV shows, Web-series etc.</small>
+                      <small
+                        >The DTH company wants Smart OTT solution for their Set
+                        Top Box devices. Which can provide subscriber based
+                        access to a world of OTT/Video Streaming apps. It
+                        includes bunch of Apps, and a huge library of curated
+                        online videos, Catch-Up TV shows, Web-series etc.</small
+                      >
                     </div>
                     <div class="list-group-item">
                       <p class="mb-1">eCommerce Mobile App Builder</p>
                       <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Bootstrap, Cordova, Ionic, Node, Express, PHP, Magento, Shell Script, MySQL, Parse Cloud</h5>
+                        <h5 class="mb-1">
+                          Bootstrap, Cordova, Ionic, Node, Express, PHP,
+                          Magento, Shell Script, MySQL, Parse Cloud
+                        </h5>
                       </div>
-                      <small>Automation tool for mobile app builder for the magento ecommerce website. It automates the generation of mobile apps for the ecommerce backend. The Apps have ecommerce features like catalog, checkout, payment, order, shipping etc..</small>
+                      <small
+                        >Automation tool for mobile app builder for the magento
+                        ecommerce website. It automates the generation of mobile
+                        apps for the ecommerce backend. The Apps have ecommerce
+                        features like catalog, checkout, payment, order,
+                        shipping etc..</small
+                      >
                     </div>
                   </div>
                 </div>
               </div>
-
-
             </mat-tab>
             <mat-tab label="Contact">
-              <div class="elfsight-app-47f60202-81ab-44d4-9e18-af402e8680a8"></div>
+              <div
+                class="elfsight-app-47f60202-81ab-44d4-9e18-af402e8680a8"
+              ></div>
             </mat-tab>
           </mat-tab-group>
-
-          
-
-
         </div>
       </div>
     </div>
