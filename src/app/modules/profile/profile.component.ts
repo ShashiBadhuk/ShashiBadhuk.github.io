@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Profile } from 'src/app/shared/models/profile';
 import { ProfileService } from 'src/app/shared/services/profile.service';
+import { BlogsService } from 'src/app/shared/services/blogs.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -11,7 +12,11 @@ export class ProfileComponent implements OnInit {
   panelOpenState = true;
   counter: any;
   headlines: any;
-  constructor(private profileService: ProfileService) {}
+  blogs: any;
+  constructor(
+    private profileService: ProfileService,
+    private blogsService: BlogsService
+  ) {}
 
   ngOnInit(): void {
     this.counter = {
@@ -35,6 +40,10 @@ export class ProfileComponent implements OnInit {
       .catch((err) => {
         console.error(err);
       });
+
+    this.blogsService.getTopBlogs().then((blogsData: any) => {
+      this.blogs = blogsData?.data?.user?.publication?.posts;
+    });
   }
   getFontAwesomeIcon(iconClassStr) {
     return iconClassStr.replace(/far|fab|fas/gi, '');

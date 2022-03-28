@@ -12,6 +12,56 @@ module.exports = __webpack_require__(/*! /Users/shashibadhuk/Documents/Workspace
 
 /***/ }),
 
+/***/ "4KHl":
+/*!***********************************!*\
+  !*** ./src/app/graphql.module.ts ***!
+  \***********************************/
+/*! exports provided: createApollo, GraphQLModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createApollo", function() { return createApollo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GraphQLModule", function() { return GraphQLModule; });
+/* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! apollo-angular */ "/IUn");
+/* harmony import */ var _apollo_client_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @apollo/client/core */ "ALmS");
+/* harmony import */ var apollo_angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! apollo-angular/http */ "E21e");
+/* harmony import */ var _apollo_client_link_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @apollo/client/link/context */ "MWEN");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../environments/environment */ "AytR");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+
+
+
+
+const uri = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].HASHNODE_API_URL; // <-- add the URL of the GraphQL server here
+function createApollo(httpLink) {
+    const authToken = Object(_apollo_client_link_context__WEBPACK_IMPORTED_MODULE_3__["setContext"])((operation, context) => ({
+        headers: {
+            Authorization: `Bearer ${_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].HASHNODE_API_TOKEN}`,
+        },
+    }));
+    const link = _apollo_client_core__WEBPACK_IMPORTED_MODULE_1__["ApolloLink"].from([authToken, httpLink.create({ uri })]);
+    return {
+        link: link,
+        cache: new _apollo_client_core__WEBPACK_IMPORTED_MODULE_1__["InMemoryCache"](),
+    };
+}
+class GraphQLModule {
+}
+GraphQLModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineNgModule"]({ type: GraphQLModule });
+GraphQLModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjector"]({ factory: function GraphQLModule_Factory(t) { return new (t || GraphQLModule)(); }, providers: [
+        {
+            provide: apollo_angular__WEBPACK_IMPORTED_MODULE_0__["APOLLO_OPTIONS"],
+            useFactory: createApollo,
+            deps: [apollo_angular_http__WEBPACK_IMPORTED_MODULE_2__["HttpLink"]],
+        },
+    ] });
+
+
+/***/ }),
+
 /***/ "AytR":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -26,7 +76,9 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false
+    production: false,
+    HASHNODE_API_URL: 'https://api.hashnode.com/',
+    HASHNODE_API_TOKEN: '2dc59735-7b0c-4ea2-a32f-2169e4f83e7b',
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -237,7 +289,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_widgets_header_default_header_default_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared/widgets/header-default/header-default.component */ "SfB9");
 /* harmony import */ var _shared_widgets_footer_default_footer_default_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/widgets/footer-default/footer-default.component */ "Xk+4");
 /* harmony import */ var _shared_widgets_page_sidenav_page_sidenav_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared/widgets/page-sidenav/page-sidenav.component */ "EWQf");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _graphql_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./graphql.module */ "4KHl");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
 
 
 
@@ -251,16 +305,17 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppModule {
 }
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]] });
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
             _ng_material_module__WEBPACK_IMPORTED_MODULE_3__["NgMaterialModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
             ngx_typed_js__WEBPACK_IMPORTED_MODULE_2__["NgxTypedJsModule"],
+            _graphql_module__WEBPACK_IMPORTED_MODULE_10__["GraphQLModule"],
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
         _shared_widgets_header_default_header_default_component__WEBPACK_IMPORTED_MODULE_7__["HeaderDefaultComponent"],
         _shared_widgets_footer_default_footer_default_component__WEBPACK_IMPORTED_MODULE_8__["FooterDefaultComponent"],
         _shared_widgets_page_sidenav_page_sidenav_component__WEBPACK_IMPORTED_MODULE_9__["PageSidenavComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -268,7 +323,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjecto
         _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
         _ng_material_module__WEBPACK_IMPORTED_MODULE_3__["NgMaterialModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-        ngx_typed_js__WEBPACK_IMPORTED_MODULE_2__["NgxTypedJsModule"]] }); })();
+        ngx_typed_js__WEBPACK_IMPORTED_MODULE_2__["NgxTypedJsModule"],
+        _graphql_module__WEBPACK_IMPORTED_MODULE_10__["GraphQLModule"]] }); })();
 
 
 /***/ }),

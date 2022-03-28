@@ -125,6 +125,36 @@
           </div>
 
           <mat-tab-group>
+            <mat-tab label="Blogs">
+              <div class="row">
+                <div class="col experiance-section">
+                  <div class="alert alert-default">Blogs</div>
+                  <div class="list-group">
+                    <div class="list-group-item" *ngFor="let blog of blogs">
+                      <h4 class="mb-1 blog-title">{{ blog.title}}</h4>
+                      <div class="d-flex w-100 justify-content-between">
+                          <img style="width: 200px; height: 150px;" [src]="blog.coverImage">
+                          <div class="blog-brief-container">
+                            <div class="blog-date">{{ blog.dateAdded | date: 'dd/MM/yyyy hh:mm a' }}</div>
+                            <div class="blog-brief">
+                              {{blog.brief}}
+                            </div>
+                            <div class="read-more">
+                              <a
+                              href="{{'https://blogs.shashibadhuk.com/'+blog.slug}}"
+                              target="_blank"
+                              mat-raised-button
+                              color="primary"
+                              >Read More</a
+                            >
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
             <mat-tab label="About Me">
               <div class="container counter-section">
                 <div class="row text-center">
