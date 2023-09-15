@@ -27,8 +27,9 @@ export class ProfileComponent implements OnInit {
     };
     this.headlines = [
       'NodeJS Full Stack Engineer',
+      'Skilled Engineering Manager / Principal Engineer'
       'A Freelancer with DevOps Skills',
-      '9+ Years Experiance in Full Stack Domain',
+      '10+ Years Experiance in Full Stack Domain',
       'Hybrid Mobile App Developer',
     ];
     this.profileService
